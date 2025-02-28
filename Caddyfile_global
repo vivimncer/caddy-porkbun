@@ -4,8 +4,11 @@
 # domain name.
 
 {
-  # Set the ACME DNS challenge provider to use Cloudflare for all sites
-  acme_dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+    # Set the ACME DNS challenge provider to use Porkbun for all sites
+    acme_dns porkbun {
+        api_key {env.Porkbun_API_TOKEN}
+        api_secret_key {env.PORKBUN_API_SECRET_KEY}
+    }
 }
 
 example.com {
