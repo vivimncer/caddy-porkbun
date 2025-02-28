@@ -6,7 +6,7 @@
 {
     # Set the ACME DNS challenge provider to use Porkbun for all sites
     acme_dns porkbun {
-        api_key {env.Porkbun_API_TOKEN}
+        api_key {env.PORKBUN_API_TOKEN}
         api_secret_key {env.PORKBUN_API_SECRET_KEY}
     }
 }
