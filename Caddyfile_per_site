@@ -20,7 +20,10 @@ example.com {
     encode gzip
 
     tls {
-        dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+        dns porkbun {
+            api_key {env.PORKBUN_API_TOKEN}
+            api_secret_key {env.PORKBUN_API_SECRET_KEY}
+        }
     }
 }
 
@@ -30,6 +33,9 @@ another-example.com {
     encode gzip
 
     tls {
-        dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+        dns porkbun {
+            api_key {env.PORKBUN_API_TOKEN}
+            api_secret_key {env.PORKBUN_API_SECRET_KEY}
+        }
     }
 }
