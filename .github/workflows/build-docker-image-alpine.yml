@@ -118,18 +118,18 @@ jobs:
             CADDY_VERSION=${{ env.VERSION }}
           platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/ppc64le,linux/s390x
           tags: |
-            ghcr.io/${{ env.REPO_OWNER }}/caddy-cloudflare:${{ env.VERSION }}-alpine
-            ghcr.io/${{ env.REPO_OWNER }}/caddy-cloudflare:alpine
-            ${{ secrets.DOCKERHUB_USERNAME }}/caddy-cloudflare:${{ env.VERSION }}-alpine
-            ${{ secrets.DOCKERHUB_USERNAME }}/caddy-cloudflare:alpine
+            ghcr.io/${{ env.REPO_OWNER }}/caddy-porkbun:${{ env.VERSION }}-alpine
+            ghcr.io/${{ env.REPO_OWNER }}/caddy-porkbun:alpine
+            ${{ secrets.DOCKERHUB_USERNAME }}/caddy-porkbun:${{ env.VERSION }}-alpine
+            ${{ secrets.DOCKERHUB_USERNAME }}/caddy-porkbun:alpine
 
       - name: Clean up Docker images
         if: env.DEPENDENCIES_AVAILABILITY == 'true'
         run: |
-          docker rmi ghcr.io/${{ env.REPO_OWNER }}/caddy-cloudflare:${{ env.VERSION }}-alpine || true
-          docker rmi ghcr.io/${{ env.REPO_OWNER }}/caddy-cloudflare:alpine || true
-          docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/caddy-cloudflare:${{ env.VERSION }}-alpine || true
-          docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/caddy-cloudflare:alpine || true
+          docker rmi ghcr.io/${{ env.REPO_OWNER }}/caddy-porkbun:${{ env.VERSION }}-alpine || true
+          docker rmi ghcr.io/${{ env.REPO_OWNER }}/caddy-porkbun:alpine || true
+          docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/caddy-porkbun:${{ env.VERSION }}-alpine || true
+          docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/caddy-porkbun:alpine || true
           docker builder prune --force
 
       - name: Create GitHub Release
